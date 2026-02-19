@@ -1,0 +1,11 @@
+controlPlane:
+  # Configure the backing store for vCluster's data
+  backingStore: # Enterprise feature - requires license
+    etcd:
+      embedded: 
+        enabled: true  # Run etcd inside the vCluster pod
+  
+experimental:
+  docker:
+    volumes:
+      - "./data/vc1:/data"

@@ -1,0 +1,48 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: mongo
+  name: mongo
+  namespace: db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongo
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: mongo
+    spec:
+      containers:
+        - name: mongo
+          image: mongo:latest # Using the latest image
+          ports:
+            - containerPort: 27017
+
+          args: ["--dbpath","/data/db"]
+          env:
+          - name: MONGO_INITDB_ROOT_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: mongo-creds
+                key: username
+          - name: MONGO_INITDB_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mongo-creds
+                key: password
+          volumeMounts:
+          - name: mongodb
+            mountPath: "/data/db"
+          
+      volumes:
+      - name: mongodb
+        persistentVolumeClaim:
+          claimName: mongo-pvc-claim
+
+
+# https://devopscube.com/deploy-mongodb-kubernetes/

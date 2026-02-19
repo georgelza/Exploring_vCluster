@@ -1,0 +1,25 @@
+controlPlane:
+  # Configure the backing store for vCluster's data
+  backingStore: # Enterprise feature - requires license
+    etcd:
+      embedded: 
+        enabled: true  # Run etcd inside the vCluster pod
+
+experimental:
+  docker:
+    nodes:
+    - name: "worker-1"
+      volumes:
+        - "./data/vc2:/data"
+      env:
+        - "NODE_ROLE=worker"
+    - name: "worker-2"
+      volumes:
+        - "./data/vc2:/data"
+      env:
+        - "NODE_ROLE=worker"
+    - name: "worker-3"
+      volumes:
+        - "./data/vc2:/data"
+      env:
+        - "NODE_ROLE=worker"
