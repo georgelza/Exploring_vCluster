@@ -24,6 +24,7 @@ BLOG: [Exploring vCluster as solution to running K8S locally inside Docker](???
 
 GIT: [Exploring_vCluster](https://github.com/georgelza/Exploring_vCluster.git)
 
+See `my-vc#` for various screen shots during deployment
 
 ### Basic HOST Preperation
 
