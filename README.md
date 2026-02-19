@@ -12,9 +12,9 @@ We have 4 README.md files, covering various steps and examples.
 
 - This file, that detail the installation of [vCluster](https://github.com/loft-sh/vcluster), see below.
 
-- Deploying a basic single node Kubernetes cluster inside vCluster, with Traefik for Ingress onto anGinx container.
+- Deploying a basic single node Kubernetes cluster inside vCluster, with [Traefik](https://traefik.io/traefik) for Ingress onto anGinx container.
 
-- Deploying a three node Kubernetes cluster inside vCluster, with Traefik for Ingress onto anGinx container.
+- Deploying a three node Kubernetes cluster inside vCluster, with [Traefik](https://traefik.io/traefik) for Ingress onto anGinx container.
 
 - Deploying MongoDB service on our three node Kubernetes cluster.s
 
@@ -25,7 +25,7 @@ BLOG: [Exploring vCluster as solution to running K8S locally inside Docker](???
 GIT: [Exploring_vCluster](https://github.com/georgelza/Exploring_vCluster.git)
 
 
-### Basical HOST Preperation
+### Basic HOST Preperation
 
 1. Install vCluster
 
@@ -42,22 +42,22 @@ vcluster use driver docker
 vcluster platform start
 ```
 
-### Creating clusters
+### Creating Our Clusters
 
-Standing up Single Node Cluster on Docker, with Traefik for Ingres onto anGinx container, with persistent storage.
+Standing up Single Node Cluster on vCluster, with [Traefik](https://traefik.io/traefik) for Ingress onto a nGinx container, with persistent storage.
 
 - See README_1.md
 
-Standing up Multi Node Cluster on Docker, with Traefik for Ingres onto anGinx container, with persistent storage.
+Standing up Multi Node Cluster on vCluster, with [Traefik](https://traefik.io/traefik) for Ingress onto a nGinx container, with persistent storage.
 
 - See README_2.md
 
-Standing up a MongoDB on a vCluster/K8s with persistent storage.
+Deploying [MongoDB](https://www.mongodb.com) on a K8s cluster on vCluster with persistent storage.
 
 - See README_3.md
 
 
-### Misc usefull commands
+### Misc useful commands
 
 Should you need to restart you host environment.
 
